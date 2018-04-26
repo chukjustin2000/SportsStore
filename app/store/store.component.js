@@ -13,10 +13,15 @@ var product_repository_1 = require("../model/product.repository");
 var StoreComponent = (function () {
     function StoreComponent(repository) {
         this.repository = repository;
+        this.selectedCategory = null;
+        this.productsPerPage = 4;
+        this.selectedPage = 1;
     }
     Object.defineProperty(StoreComponent.prototype, "products", {
         get: function () {
-            return this.repository.getProducts();
+            var pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+            return this.repository.getProducts(this.selectedCategory)
+                .slice(pageIndex, pageIndex + this.productsPerPage);
         },
         enumerable: true,
         configurable: true
@@ -24,6 +29,27 @@ var StoreComponent = (function () {
     Object.defineProperty(StoreComponent.prototype, "categories", {
         get: function () {
             return this.repository.getCategories();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    StoreComponent.prototype.changeCategory = function (newCategory) {
+        this.selectedCategory = newCategory;
+    };
+    StoreComponent.prototype.changePage = function (newPage) {
+        this.selectedPage = newPage;
+    };
+    StoreComponent.prototype.changePageSize = function (newSize) {
+        this.productsPerPage = Number(newSize);
+        this.changePage(1);
+    };
+    Object.defineProperty(StoreComponent.prototype, "pageCount", {
+        /* get pageNumbers(): number[] {
+             return Array(Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage))
+                 .fill(0).map((x, i) => i + 1);
+         }*/
+        get: function () {
+            return Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage);
         },
         enumerable: true,
         configurable: true
