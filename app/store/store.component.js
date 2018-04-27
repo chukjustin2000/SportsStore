@@ -8,11 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var product_repository_1 = require("../model/product.repository");
-var StoreComponent = (function () {
-    function StoreComponent(repository) {
+var cart_model_1 = require("../model/cart.model");
+var router_1 = require("@angular/router");
+var StoreComponent = /** @class */ (function () {
+    function StoreComponent(repository, cart, router) {
         this.repository = repository;
+        this.cart = cart;
+        this.router = router;
         this.selectedCategory = null;
         this.productsPerPage = 4;
         this.selectedPage = 1;
@@ -54,13 +59,18 @@ var StoreComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    StoreComponent.prototype.addProductToCart = function (product) {
+        this.cart.addLine(product);
+        this.router.navigateByUrl("/cart");
+    };
     StoreComponent = __decorate([
         core_1.Component({
             selector: "store",
             moduleId: module.id,
             templateUrl: "store.component.html"
-        }), 
-        __metadata('design:paramtypes', [product_repository_1.ProductRepository])
+        }),
+        __metadata("design:paramtypes", [product_repository_1.ProductRepository,
+            cart_model_1.Cart, router_1.Router])
     ], StoreComponent);
     return StoreComponent;
 }());
