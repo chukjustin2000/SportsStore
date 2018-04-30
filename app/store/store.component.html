@@ -10,13 +10,16 @@
             [class.active]="cat == selectedCategory" (click)="changeCategory(cat)">
         {{cat}}
     </button>
+    <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
+        Admin
+    </button>
 </div>
 <div class="col-xs-9 p-a-1">
     <div *ngFor="let product of products" class="card card-outline-primary">
         <h4 class="card-header">
             {{product.name}}
             <span class="pull-xs-right tag tag-pill tag-primary">
-                {{ product.price | currency:"USD":true:"2.2-2" }}
+                {{ product.price | currency:"EUR":true:"2.2-2" }}
             </span>
         </h4>
         <div class="card-text p-a-1">{{product.description}}

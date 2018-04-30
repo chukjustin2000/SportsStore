@@ -33,6 +33,10 @@ var StaticDataSource = /** @class */ (function () {
     StaticDataSource.prototype.getProducts = function () {
         return Observable_1.Observable.from([this.products]);
     };
+    StaticDataSource.prototype.saveOrder = function (order) {
+        console.log(JSON.stringify(order));
+        return Observable_1.Observable.from([order]);
+    };
     StaticDataSource = __decorate([
         core_1.Injectable()
     ], StaticDataSource);

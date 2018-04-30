@@ -10,12 +10,20 @@ var core_1 = require("@angular/core");
 var product_repository_1 = require("./product.repository");
 var static_datasource_1 = require("./static.datasource");
 var cart_model_1 = require("./cart.model");
+var order_model_1 = require("./order.model");
+var order_repository_1 = require("./order.repository");
+var http_1 = require("@angular/http");
+var rest_datasource_1 = require("./rest.datasource");
+var auth_service_1 = require("./auth.service");
 var ModelModule = /** @class */ (function () {
     function ModelModule() {
     }
     ModelModule = __decorate([
         core_1.NgModule({
-            providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart]
+            imports: [http_1.HttpModule],
+            providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart,
+                order_model_1.Order, order_repository_1.OrderRepository, { provide: static_datasource_1.StaticDataSource, useClass: rest_datasource_1.RestDataSource },
+                rest_datasource_1.RestDataSource, auth_service_1.AuthService]
         })
     ], ModelModule);
     return ModelModule;

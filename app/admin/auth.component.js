@@ -10,35 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var order_repository_1 = require("../model/order.repository");
-var order_model_1 = require("../model/order.model");
-var CheckoutComponent = /** @class */ (function () {
-    function CheckoutComponent(repository, order) {
-        this.repository = repository;
-        this.order = order;
-        this.orderSent = false;
-        this.submitted = false;
+var router_1 = require("@angular/router");
+var auth_service_1 = require("../model/auth.service");
+var AuthComponent = /** @class */ (function () {
+    function AuthComponent(router, auth) {
+        this.router = router;
+        this.auth = auth;
     }
-    CheckoutComponent.prototype.submitOrder = function (form) {
+    AuthComponent.prototype.authenticate = function (form) {
         var _this = this;
-        this.submitted = true;
         if (form.valid) {
-            this.repository.saveOrder(this.order).subscribe(function (order) {
-                _this.order.clear();
-                _this.orderSent = true;
-                _this.submitted = false;
+            this.auth.authenticate(this.username, this.password)
+                .subscribe(function (response) {
+                if (response) {
+                    _this.router.navigateByUrl("/admin/main");
+                }
+                _this.errorMessage = "Authentication Failed";
             });
         }
+        else {
+            this.errorMessage = "Form Data Invalid";
+        }
     };
-    CheckoutComponent = __decorate([
+    AuthComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: "checkout.component.html",
-            styleUrls: ["checkout.component.css"]
+            templateUrl: "auth.component.html"
         }),
-        __metadata("design:paramtypes", [order_repository_1.OrderRepository,
-            order_model_1.Order])
-    ], CheckoutComponent);
-    return CheckoutComponent;
+        __metadata("design:paramtypes", [router_1.Router, auth_service_1.AuthService])
+    ], AuthComponent);
+    return AuthComponent;
 }());
-exports.CheckoutComponent = CheckoutComponent;
+exports.AuthComponent = AuthComponent;
