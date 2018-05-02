@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var static_datasource_1 = require("./static.datasource");
+//import { StaticDataSource } from "./static.datasource";
+var rest_datasource_1 = require("./rest.datasource");
 var ProductRepository = /** @class */ (function () {
     function ProductRepository(dataSource) {
         var _this = this;
@@ -29,15 +30,36 @@ var ProductRepository = /** @class */ (function () {
             .filter(function (p) { return category == null || category == p.category; });
     };
     ProductRepository.prototype.getProduct = function (id) {
-        //return this.products.(p => p.id == id);
-        return this.products[id];
+        return this.products.find(function (p) { return p.id == id; });
+        //return this.products[id];
     };
     ProductRepository.prototype.getCategories = function () {
         return this.categories;
     };
+    ProductRepository.prototype.saveProduct = function (product) {
+        var _this = this;
+        if (product.id == null || product.id == 0) {
+            this.dataSource.saveProduct(product)
+                .subscribe(function (p) { return _this.products.push(p); });
+        }
+        else {
+            this.dataSource.updateProduct(product)
+                .subscribe(function (p) {
+                _this.products.splice(_this.products.
+                    findIndex(function (p) { return p.id == product.id; }), 1, product);
+            });
+        }
+    };
+    ProductRepository.prototype.deleteProduct = function (id) {
+        var _this = this;
+        this.dataSource.deleteProduct(id).subscribe(function (p) {
+            _this.products.splice(_this.products.
+                findIndex(function (p) { return p.id == id; }), 1);
+        });
+    };
     ProductRepository = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [static_datasource_1.StaticDataSource])
+        __metadata("design:paramtypes", [rest_datasource_1.RestDataSource])
     ], ProductRepository);
     return ProductRepository;
 }());
