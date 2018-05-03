@@ -12,7 +12,7 @@ import { RouterModule } from "@angular/router";
 @NgModule({
     imports:[BrowserModule,FormsModule,ModelModule, RouterModule],
     declarations: [StoreComponent, CounterDirective, CartSummaryComponent,
-    CartDetailComponent, CheckoutComponent],
+                        CartDetailComponent, CheckoutComponent],
     exports:[StoreComponent, CartDetailComponent, CheckoutComponent]
 })
 
