@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var CounterDirective = /** @class */ (function () {
+var CounterDirective = (function () {
     function CounterDirective(container, template) {
         this.container = container;
         this.template = template;
@@ -34,7 +34,7 @@ var CounterDirective = /** @class */ (function () {
     return CounterDirective;
 }());
 exports.CounterDirective = CounterDirective;
-var CounterDirectiveContext = /** @class */ (function () {
+var CounterDirectiveContext = (function () {
     function CounterDirectiveContext($implicit) {
         this.$implicit = $implicit;
     }

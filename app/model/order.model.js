@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var cart_model_1 = require("./cart.model");
-var Order = /** @class */ (function () {
+var Order = (function () {
     function Order(cart) {
         this.cart = cart;
         this.shipped = false;

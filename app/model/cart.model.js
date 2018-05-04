@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var Cart = /** @class */ (function () {
+var Cart = (function () {
     function Cart() {
         this.lines = [];
         this.itemCount = 0;
@@ -56,7 +56,7 @@ var Cart = /** @class */ (function () {
     return Cart;
 }());
 exports.Cart = Cart;
-var CartLine = /** @class */ (function () {
+var CartLine = (function () {
     function CartLine(product, quantity) {
         this.product = product;
         this.quantity = quantity;

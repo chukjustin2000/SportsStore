@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 //import { StaticDataSource } from "./static.datasource";
 var rest_datasource_1 = require("./rest.datasource");
-var ProductRepository = /** @class */ (function () {
+var ProductRepository = (function () {
     function ProductRepository(dataSource) {
         var _this = this;
         this.dataSource = dataSource;

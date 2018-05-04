@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var product_model_1 = require("../model/product.model");
 var router_1 = require("@angular/router");
 var product_repository_1 = require("../model/product.repository");
-var ProductEditorComponent = /** @class */ (function () {
+var ProductEditorComponent = (function () {
     function ProductEditorComponent(repository, router, activeRoute) {
         this.repository = repository;
         this.router = router;

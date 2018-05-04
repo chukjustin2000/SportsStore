@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var auth_service_1 = require("../model/auth.service");
-var AuthGuard = /** @class */ (function () {
+var AuthGuard = (function () {
     function AuthGuard(router, auth) {
         this.router = router;
         this.auth = auth;

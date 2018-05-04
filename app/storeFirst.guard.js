@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var store_component_1 = require("./store/store.component");
-var StoreFirstGuard = /** @class */ (function () {
+var StoreFirstGuard = (function () {
     function StoreFirstGuard(router) {
         this.router = router;
         this.firstNavigation = true;

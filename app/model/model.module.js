@@ -15,7 +15,7 @@ var order_repository_1 = require("./order.repository");
 var http_1 = require("@angular/http");
 var rest_datasource_1 = require("./rest.datasource");
 var auth_service_1 = require("./auth.service");
-var ModelModule = /** @class */ (function () {
+var ModelModule = (function () {
     function ModelModule() {
     }
     ModelModule = __decorate([

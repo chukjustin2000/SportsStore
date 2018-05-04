@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 var product_model_1 = require("./product.model");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/observable/from");
-var StaticDataSource = /** @class */ (function () {
+var StaticDataSource = (function () {
     function StaticDataSource() {
         this.products = [
             new product_model_1.Product(1, "Product 1", "Category 1", "Product 1 (Category 1)", 100),

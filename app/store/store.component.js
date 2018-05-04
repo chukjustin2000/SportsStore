@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var product_repository_1 = require("../model/product.repository");
 var cart_model_1 = require("../model/cart.model");
 var router_1 = require("@angular/router");
-var StoreComponent = /** @class */ (function () {
+var StoreComponent = (function () {
     function StoreComponent(repository, cart, router) {
         this.repository = repository;
         this.cart = cart;

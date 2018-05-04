@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var order_repository_1 = require("../model/order.repository");
-var OrderTableComponent = /** @class */ (function () {
+var OrderTableComponent = (function () {
     function OrderTableComponent(repository) {
         this.repository = repository;
         this.includeShipped = false;

@@ -16,26 +16,26 @@ var auth_guard_1 = require("./auth.guard");
 var productEditor_component_1 = require("./productEditor.component");
 var productTable_component_1 = require("./productTable.component");
 var orderTable_component_1 = require("./orderTable.component");
-var routing = router_1.RouterModule.forChild([
-    { path: "auth", component: auth_component_1.AuthComponent },
+/*let routing = RouterModule.forChild([
+    { path: "auth", component: AuthComponent },
     {
-        path: "main", component: admin_component_1.AdminComponent, canActivate: [auth_guard_1.AuthGuard],
+        path: "main", component: AdminComponent, canActivate: [AuthGuard],
         children: [
-            { path: "products/:mode/:id", component: productEditor_component_1.ProductEditorComponent },
-            { path: "products/:mode", component: productEditor_component_1.ProductEditorComponent },
-            { path: "products", component: productTable_component_1.ProductTableComponent },
-            { path: "orders", component: orderTable_component_1.OrderTableComponent },
+            { path: "products/:mode/:id", component: ProductEditorComponent },
+            { path: "products/:mode", component: ProductEditorComponent },
+            { path: "products", component: ProductTableComponent },
+            { path: "orders", component: OrderTableComponent },
             { path: "**", redirectTo: "products" }
         ]
     },
     { path: "**", redirectTo: "auth" }
-]);
-var AdminModule = /** @class */ (function () {
+]);*/
+var AdminModule = (function () {
     function AdminModule() {
     }
     AdminModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, forms_1.FormsModule, routing],
+            imports: [common_1.CommonModule, forms_1.FormsModule, router_1.RouterModule],
             providers: [auth_guard_1.AuthGuard],
             declarations: [auth_component_1.AuthComponent, admin_component_1.AdminComponent,
                 productTable_component_1.ProductTableComponent, productEditor_component_1.ProductEditorComponent, orderTable_component_1.OrderTableComponent]

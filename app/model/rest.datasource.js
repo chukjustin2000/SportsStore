@@ -14,7 +14,7 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var PROTOCOL = "http";
 var PORT = 3500;
-var RestDataSource = /** @class */ (function () {
+var RestDataSource = (function () {
     function RestDataSource(http) {
         this.http = http;
         this.baseUrl = PROTOCOL + "://" + location.hostname + ":" + PORT + "/";

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var auth_service_1 = require("../model/auth.service");
 var router_1 = require("@angular/router");
-var AdminComponent = /** @class */ (function () {
+var AdminComponent = (function () {
     function AdminComponent(auth, router) {
         this.auth = auth;
         this.router = router;

@@ -16,7 +16,7 @@ var cartSummary_component_1 = require("./cartSummary.component");
 var cartDetail__component_1 = require("./cartDetail. component");
 var checkout_component_1 = require("./checkout.component");
 var router_1 = require("@angular/router");
-var StoreModule = /** @class */ (function () {
+var StoreModule = (function () {
     function StoreModule() {
     }
     StoreModule = __decorate([

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var order_repository_1 = require("../model/order.repository");
 var order_model_1 = require("../model/order.model");
-var CheckoutComponent = /** @class */ (function () {
+var CheckoutComponent = (function () {
     function CheckoutComponent(repository, order) {
         this.repository = repository;
         this.order = order;
